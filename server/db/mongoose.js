@@ -11,7 +11,7 @@ mongoose.connect(db.mlab, { useNewUrlParser: true }, (err, data) => {
         console.log('unable to connect to database', err);
         return;
     }
-    console.log('connected to data', data);
+    //console.log('connected to data', data);
 }); 
 
 module.exports = {mongoose};
