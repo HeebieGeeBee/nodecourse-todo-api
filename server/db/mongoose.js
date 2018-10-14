@@ -6,6 +6,12 @@ let db = {
 }
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/TodoApp', { useNewUrlParser: true }); 
+mongoose.connect(db.mlab, { useNewUrlParser: true }, (err, data) => {
+    if(err) {
+        console.log('unable to connect to database', err);
+        return;
+    }
+    console.log('connected to data', data);
+}); 
 
 module.exports = {mongoose};
