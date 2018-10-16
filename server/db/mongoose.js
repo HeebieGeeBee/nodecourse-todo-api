@@ -6,7 +6,7 @@ let db = {
 }
 
 mongoose.Promise = global.Promise;
-mongoose.connect(db.mlab, { useNewUrlParser: true }, (err, data) => {
+mongoose.connect(db.mlab || db.localhost, { useNewUrlParser: true }, (err, data) => {
     if(err) {
         console.log('unable to connect to database', err);
         return;
